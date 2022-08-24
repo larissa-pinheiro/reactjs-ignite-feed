@@ -38,9 +38,9 @@ A proposta é simular um feed de rede social, onde é possível interagir nas po
 - [Reactt.js](https://pt-br.reactjs.org) com [Vite](https://vitejs.dev).
 - Flexbox
 - Mobile-first
-- [CSS Modules](#)
+- [CSS Modules](https://github.com/css-modules/css-modules)
 - [Tailwind UI](https://tailwindui.com)
-- [React-icons](https://react-icons.github.io/react-icons/)
+- [Phosphor Icons](https://phosphoricons.com)
 
 ## 💻Projeto
 
