@@ -6,11 +6,12 @@ A proposta é simular um feed de rede social, onde é possível interagir nas po
 ## Índice
 
 - [Overview](#overview)
-  - [Screenshot](#screenshot)
+  - [Desktop](#desktop)
+  - [Mobile](#mobile)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Project](#project)
+- [Processo](#processo)
+  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Projeto](#projeto)
 
 ## Overview
 
