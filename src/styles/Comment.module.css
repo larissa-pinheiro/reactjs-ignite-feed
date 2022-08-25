@@ -55,7 +55,7 @@
 }
 
 .commentContent p {
-  margin-top: 1rem;
+  margin: 1rem 0;
   color: var(--gray-300);
 }
 
@@ -71,6 +71,7 @@
 
   display: flex;
   align-items: center;
+  font-weight: bold;
 
   border-radius: 2px;
 }
