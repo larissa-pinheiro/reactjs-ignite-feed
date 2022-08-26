@@ -35,12 +35,13 @@ A proposta é simular um feed de rede social, onde é possível interagir nas po
 
 ### Tecnologias utilizadas
 
-- [Reactt.js](https://pt-br.reactjs.org) com [Vite](https://vitejs.dev).
+- [React.js](https://pt-br.reactjs.org) com [Vite](https://vitejs.dev).
 - Flexbox
 - Mobile-first
 - [CSS Modules](https://github.com/css-modules/css-modules)
-- [Tailwind UI](https://tailwindui.com)
+- [Tailwind UI](https://tailwindui.com) concepts
 - [Phosphor Icons](https://phosphoricons.com)
+- [Intl.DateTimeFormat](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
 
 ## 💻Projeto
 
