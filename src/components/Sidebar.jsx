@@ -1,5 +1,5 @@
 import { PencilSimpleLine } from "phosphor-react"; // npm i phorphor-react > import no documento > ctrl+space dentro dos colchetes para visualizar os ícones
-
+import { Avatar } from "./Avatar";
 import styles from "../styles/Sidebar.module.css";
 
 export function Sidebar() {
@@ -11,10 +11,7 @@ export function Sidebar() {
       />
 
       <div className={styles.profile}>
-        <img
-          className={styles.avatar}
-          src="https://github.com/larissa-pinheiro.png"
-        />
+        <Avatar src="https://github.com/larissa-pinheiro.png" />
 
         <strong>Larissa May</strong>
         <span>Web Developer</span>
