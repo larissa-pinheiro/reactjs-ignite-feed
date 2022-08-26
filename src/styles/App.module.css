@@ -8,3 +8,16 @@
   gap: 2rem;
   align-items: flex-start;
 }
+
+/* método responsivo, em que apenas 1 coluna ocupa a largura inteira da tela */
+/* incluímos o fs 87.5% = 14px para dispositivos mobile */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
