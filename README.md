@@ -41,7 +41,7 @@ A proposta é simular um feed de rede social, onde é possível interagir nas po
 - [CSS Modules](https://github.com/css-modules/css-modules)
 - [Tailwind UI](https://tailwindui.com) concepts
 - [Phosphor Icons](https://phosphoricons.com)
-- [Intl.DateTimeFormat](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+- [Date-fns](https://date-fns.org) lib para manipulação de datas
 
 ## 💻Projeto
 
