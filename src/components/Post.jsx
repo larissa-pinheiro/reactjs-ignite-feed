@@ -1,46 +1,96 @@
-import { Comment } from "./Comment";
-import styles from "../styles/Post.module.css";
-import { Avatar } from "./Avatar";
+import { format, formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
+import { useState } from "react";
 
-export function Post() {
+import { Avatar } from "./Avatar";
+import { Comment } from "./Comment";
+
+import styles from "../styles/Post.module.css";
+
+export function Post({ author, content }) {
+  // estado = variáveis que o componente precisa monitorar; em caso de alteração, ele irá avisar ao React para mostrar as novas informações em tela
+
+  // \/ estado para armazenar o conteúdo de um array de comentários
+  const [comments, setComments] = useState(["Post muito bacana, hein?!"]);
+
+  // estado para adicionar um novo comentário
+  const [newCommentText, setNewCommentText] = useState("");
+
+  const publishedDateFormatted = format(
+    new Date("2022-08-26 20:00:00"),
+    "d 'de' LLLL 'às' HH:mm'h'",
+    {
+      locale: ptBR,
+    }
+  );
+
+  const publishedDateRelativeToNow = formatDistanceToNow(
+    new Date("2022-08-26 20:00:00"),
+    {
+      locale: ptBR,
+      addSuffix: true,
+    }
+  );
+
+  function handleCreateNewComment() {
+    event.preventDefault();
+
+    // ...comments => spread operator: copia o valor existente dentro da variável
+    setComments([...comments, newCommentText]);
+
+    // após receber o comentário, retorno para o valor original (em branco)
+    setNewCommentText("");
+  }
+
+  function handleNewCommentChange() {
+    // event.target.value => obtenho o valor de dentro do evento, no caso o onChange da textarea
+    setNewCommentText(event.target.value);
+  }
+
   return (
     <article className={styles.post}>
       <header className={styles.header}>
         <div className={styles.author}>
-          <Avatar src="https://github.com/larissa-pinheiro.png" />
+          <Avatar src={author.avatarUrl} />
           <div className={styles.authorInfo}>
-            <strong>Larissa May</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
         <time
           className={styles.time}
-          title="24 de Agosto às 20:50h"
-          dateTime="2022-08-24 20:50:02"
+          title={publishedDateFormatted}
+          dateTime="2022-08-26 20:00:00"
         >
-          Publicado há 1h
+          {publishedDateRelativeToNow}
         </time>
       </header>
 
       <div className={styles.content}>
-        <p>Fala galeraa 👋</p>
-        <p>
-          Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
-          no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
-        </p>
-        <p>
-          👉<a href="#">jane.design/doctorcare</a>
-        </p>
-        <p>
-          <a href="#">#novoprojeto #nlw #rocketseat</a>
-        </p>
+        {content.map((line) => {
+          if (line.type === "paragraph") {
+            return <p>{line.content}</p>;
+          } else if (line.type === "link") {
+            return (
+              <p>
+                <a href="#">{line.content}</a>
+              </p>
+            );
+          }
+        })}
       </div>
 
-      <form className={styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea placeholder="Deixe um comentário" />
+        {/* onChange => vou monitorar toda vez que houver uma mudança no conteúdo dessa textarea (handle = usado para chamar uma função) */}
+        <textarea
+          name="comment"
+          placeholder="Deixe um comentário"
+          value={newCommentText}
+          onChange={handleNewCommentChange}
+        />
 
         <footer>
           <button type="submit">Publicar</button>
@@ -48,9 +98,9 @@ export function Post() {
       </form>
 
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment) => {
+          return <Comment content={comment} />;
+        })}
       </div>
     </article>
   );
