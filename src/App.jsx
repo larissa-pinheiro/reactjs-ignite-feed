@@ -37,9 +37,28 @@ const posts = [
       {
         type: "paragraph",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "Existem 3 principais momentos em que um componente é renderizado novamente no React:",
       },
-      { type: "link", content: "testeteste.net" },
+      {
+        type: "paragraph",
+        content: "1. Quando o estado altera;",
+      },
+      {
+        type: "paragraph",
+        content: "2. Quando a propriedade altera;",
+      },
+      {
+        type: "paragraph",
+        content: "3. Quando um componente pai renderiza novamente.",
+      },
+      {
+        type: "paragraph",
+        content: "Para aprender mais sobre React, acesse:",
+      },
+      {
+        type: "link",
+        content: "https://pt-br.reactjs.org",
+      },
     ],
     publishedAt: new Date("2022-08-24 20:00:05"),
   },
