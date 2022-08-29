@@ -18,13 +18,13 @@ A proposta é simular um feed de rede social, onde é possível interagir nas po
 ### Desktop
 
 <div align="center">
- <img src="#">
+ <img src="https://cdn.discordapp.com/attachments/1004504690974801981/1013957565354360923/unknown.png">
 </div>
 
 ### Mobile
 
 <div align="center">
- <img src="#">
+ <img src="https://cdn.discordapp.com/attachments/1004504690974801981/1013958013771599942/unknown.png">
 </div>
 
 ### Links
