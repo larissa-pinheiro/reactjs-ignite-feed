@@ -15,7 +15,10 @@ export function Comment({ content, onDeleteComment }) {
   }
 
   function handleLikeComment() {
-    setLikeCount(likeCount + 1);
+    // sempre que for atualizar uma informação e essa informação depende do valor que ela tinha anteriormente, é sempre importante fazer a atualização usando o padrão de função; o state aqui atua fazendo uma "fila" de atualizações, retornando o valor mais atual.
+    setLikeCount((state) => {
+      return state + 1;
+    });
   }
 
   return (
