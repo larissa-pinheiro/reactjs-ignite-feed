@@ -2,11 +2,20 @@ import { Avatar } from "./Avatar";
 import { Trash } from "phosphor-react";
 import { ThumbsUp } from "phosphor-react";
 
+import { useState } from "react";
+
 import styles from "../styles/Comment.module.css";
 
 export function Comment({ content, onDeleteComment }) {
+  // o valor inicial do número de likes é 0; é sempre importante iniciar o estado com alguma informação que seja do mesmo tipo que a informação que será armazenada.
+  const [likeCount, setLikeCount] = useState(0);
+
   function handleDeleteComment() {
     onDeleteComment(content);
+  }
+
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
   }
 
   return (
@@ -36,9 +45,10 @@ export function Comment({ content, onDeleteComment }) {
         </div>
 
         <footer>
-          <button>
+          {/* qualquer evento no React deve receber como valor uma função; caso ele receba a execução da função, o código entrará em loop */}
+          <button onClick={handleLikeComment}>
             <ThumbsUp size={20} weight="bold" />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
